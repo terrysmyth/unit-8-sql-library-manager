@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+	h1 Books
+	div(class="search")
+		form(action="/books/search", method="post")
+			input(type="text", name="search", placeholder="Search: Title, Author, Genre, Year")
+			input(type="submit", value="Search")
+	p 
+		a(class="button" href='/books/new') Create New Book
+
+	table
+		thead
+			th Title
+			th Author
+			th Genre
+			th Year
+		tbody
+			for book in books
+				tr
+					td
+						a(href=`/books/${book.id}`) #{book.title}
+					td #{book.author}
+					td #{book.genre}
+					td #{book.year}
+				
+
+
+
+

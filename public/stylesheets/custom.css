@@ -1,0 +1,7 @@
+.errors li {
+    color: red;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+}
