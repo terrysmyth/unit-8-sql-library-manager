@@ -27,9 +27,8 @@ app.use( (req, res, next) => {
   next(createError(404));
 });
 
-// error handler
+// GLOBAL ERROR HANDLER
 app.use( (err, req, res, next) => {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   if (err.status === 404) {
     res.status(404).render('error', { error: err });
