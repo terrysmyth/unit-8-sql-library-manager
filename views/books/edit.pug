@@ -1,4 +1,10 @@
 form(action='/books/' + book.id + '/edit', method='post')
+    if(errors)
+            h2.errors Oops an error occurred!
+            ul.errors
+                each error in errors
+                    li
+                        =error.message
     p
         label(for='title') Title
         input#title(name='title', type='text', value=`${book.title}`)
